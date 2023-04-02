@@ -19,7 +19,6 @@
 # Get Started
 Çalıştır => C:\Kullanıcılar\Adınız>node myfirst.js (Dosyaya  girmeyi unutma!!!!)
 
-
 # Node.js Modules
 
 * Node.js modülleri, önceden yazılmış JavaScript kod bloklarının tekrar kullanılabilmesini sağlar.
@@ -94,7 +93,7 @@ server.listen(3000, () => {
 });
 
 ```
-Bu kod örneğinde
+#### Bu kod örneğinde
 
 * <b> "http" </b> modülü <b>"require()"</b> fonksiyonu kullanılarak yüklenir ve "createServer()" metodu kullanarak bir HTTP sunucusu oluşturulur.( <b>"createServer()" </b> metodu, HTTP isteklerini dinleyen ve yanıt veren bir işlev alır. )
 
@@ -109,7 +108,6 @@ Bu kod örneğinde
 <br>
 <b>res </b>  nesnesi, isteğe yanıt olarak gönderilen tüm bilgileri içerir. <br>
 Bu nesneler, HTTP modülü kullanılarak bir web sunucusu oluşturulurken, isteği yönetmek ve yanıt vermek için kullanılır.
-
 <hr>
 
 ## Add an HTTP Header
@@ -127,7 +125,6 @@ http.createServer(function (req, res) {
 * Bu örnekte, <b>res.writeHead()</b> yöntemi <b>"Content-Type"</b> başlığını <b>"text/html"</b> olarak ayarlar ve yanıtın durum kodunu <b>"200"</b> olarak ayarlar (başarılı bir yanıtı temsil eder).
 * <b>res.write()</b> yöntemi, yanıtın gövdesine HTML kodu ekler.
 * <b>res.end()</b> yöntemi, yanıtı sonlandırır ve istemciye gönderir.
-
 <hr>
 
 ## Read the Query String
@@ -153,13 +150,11 @@ http.createServer(function (req, res) {
 * Yukarıdaki örnekte, <b>url.parse()</b> yöntemi kullanılarak istek URL'si ayrıştırılır ve query özelliği kullanılarak sorgu dizesi alınır. 
 * Bu sorgu dizesi daha sonra <b>name</b> ve <b>age </b>değişkenlerine atanır ve <b>res.write()</b> yöntemiyle yanıt olarak gönderilir.
 
-
-
 # Node.js File System Module
 
 Node.js'de fs (file system) modülü, dosya işlemleri yapmak için kullanılır. Bu modül, dosyaları okumak, yazmak, güncellemek, silmek, oluşturmak, taşımak ve kopyalamak gibi birçok işlemi gerçekleştirmek için fonksiyonlar sağlar.
 
-## Örneğin:
+### Örneğin:
 
 ```Javascript
 // Yazma örneği
@@ -231,17 +226,14 @@ fs.readdir('.', (err, files) => {
   if (err) throw err;
   console.log(files);
 });
-
-
 ```
 
 # Node.js URL Module
 
 Node.js URL modülü, URL'leri (Uniform Resource Locator) ayrıştırmak, işlemek ve oluşturmak için kullanılır. Bu modül, bir URL'nin farklı parçalarına erişmek için birçok yöntem sağlar.
 
-## Örneğin:
+### Örneğin:
 Aşağıda, Node.js URL modülü kullanarak bir URL'yi ayrıştırmak ve parçalarına erişmek için kullanabileceğiniz örnek bir kod parçası verilmiştir:
-
 
 ```Javascript
 const url = require('url');
@@ -266,13 +258,23 @@ console.log(parsedUrl.hash);     // '#hash'
 ```
 * Bu örnekte, <b>url.parse()</b> metodu kullanılarak bir URL ayrıştırılır ve parçalarına erişilir. Metodun ilk parametresi, ayrıştırılacak URL'yi, ikinci parametresi ise URL sorgularını ayrıştırmak için kullanılan bir nesne olabilir. <b>url.parse()</b> metodu, URL'nin ayrıştırılmış halini bir nesne olarak döndürür ve bu nesnenin özellikleri aracılığıyla URL parçalarına erişilir.
 
+  * protocol: URL'nin protokolü (http, https, ftp vb.).
+  * slashes: // işaretlerinin varlığı.
+  * auth: URL'nin kimlik doğrulama bilgileri (kullanıcı adı ve şifre).
+  * host: URL'nin ana bilgisayarı ve bağlantı noktası.
+  * port: URL'nin bağlantı noktası.
+  * hostname: URL'nin ana bilgisayarı.
+  * hash: URL'nin sayfadaki konumu.
+  * search: URL'nin sorgu dizisi.
+  * query: URL'nin sorgu dizisi (sorgu dizesi anahtar-değer çiftleri olarak ayrıştırılmış hali).
+  * pathname: URL'nin yolu.
+  * path: URL'nin yolu ve sorgu dizisi.
+  * href: Tam URL.
 <hr>
 Node.js URL modülü, URL'leri oluşturmak için de kullanılabilir. url.format() metodu, bir URL nesnesini bir URL'ye dönüştürür. Aşağıda örnek bir kod parçası verilmiştir:
 
-
 ```Javascript
 const url = require('url');
-
 const myUrl = url.format({
   protocol: 'https',
   hostname: 'www.example.com',
@@ -284,3 +286,4 @@ console.log(myUrl); // 'https://www.example.com/path?id=123&name=example'
 
 ```
 Bu örnekte, url.format() metodu, bir URL nesnesi alır ve bu nesneyi bir URL'ye dönüştürür. Nesne özellikleri, URL parçalarına karşılık gelir.
+
